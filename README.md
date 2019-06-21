@@ -5,6 +5,8 @@ Adds print-friendly styles to the client profile page on Citizens Advice's Caseb
 1. Install the **Stylus** browser extension from the [Chrome web store][stylus-chrome] or [Firefox add-ons][stylus-firefox].
 2. Click here: [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)][css] to install the custom styles.
 
+Then, when viewing a client in Casebook, use your browser's print button (Ctrl + P).
+
 ## Screenshot
 <img width="300" alt="printed page of example client profile" src="https://raw.githubusercontent.com/timwis/casebook-print-client/master/screenshot.png">
 
