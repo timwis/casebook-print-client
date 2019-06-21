@@ -1,8 +1,81 @@
-#profile_information_view_body,
-#client_consent_view_body,
-#benefits_view_body,
-#debt_and_money_view_body,
-#office_note_view_body,
-#boundary_information_view_body {
-    display: block;
+@media print {
+    /* profile section headers */
+    #benefits_view,
+    #debt_and_money_view,
+    #boundary_information_view {
+        display: none;
+    }
+
+    /* profile section bodies */
+    #profile_information_view_body,
+    #client_consent_view_body,
+    #office_note_view_body
+    {
+        display: block;
+    }
+
+    /* profile section expand/collapse buttons */
+    .collapsible-button-state div,
+    .collapsible-button-state::before {
+        display: none;
+    }
+    
+    /* profile section headers */
+    .collapsible-heading * {
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
+    
+    /* page title */
+    #content .container-fluid h1 {
+        display: none;
+    }
+    
+    /* client id number */
+    .component-side-bar h2 {
+        text-align: right;
+    }
+    
+    /* client name and address */
+    #personal_details_view_body .card {
+        padding: 0;
+    }
+    
+    /* profile information rows */
+    #profile_information_view_body dt:nth-of-type(odd),
+    #profile_information_view_body dd:nth-of-type(odd) {
+        background-color: #dfdfdf;
+    }
+    
+    /* consent rows */
+    .component-client-consent,
+    .component-client-consent h4 {
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* consent rows */
+    .component-client-consent:nth-of-type(odd) {
+        background-color: #dfdfdf !important; /* override another !important */
+    }
+    
+    /* renew consent container which otherwise makes consent rows have inconsistent heights */
+    .component-client-consent .consent-renew + .row {
+        display: none;
+    }
+    
+    /* header dividing general consent from special categories */
+    #client_consent_view_body h4.h6 {
+        display: none;
+    }
+    
+    /* horizontal divider in consent area */
+    #client_consent_view_body hr {
+        display: none;
+    }
+    
+    /* cases */
+    #client-cases-table-container {
+        display: none;
+    }
 }
