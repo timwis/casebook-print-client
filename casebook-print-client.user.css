@@ -7,7 +7,7 @@
 @license        MIT
 @homepageURL    https://github.com/timwis/casebook-print-client
 ==/UserStyle== */
-@-moz-document url-prefix("https://casebook.training.citizensadvice.org.uk/clients/") {
+@-moz-document url-prefix("https://casebook.training.citizensadvice.org.uk/clients/"), url-prefix("https://casebook.citizensadvice.org.uk/clients/") {
   @media print {
     /* sections */
     .collapsible {
