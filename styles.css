@@ -1,5 +1,8 @@
 @media print {
     /* sections */
+    .collapsible {
+        padding-bottom: 20px;
+    }
     #benefits_view,
     #debt_and_money_view,
     #boundary_information_view {
@@ -28,7 +31,13 @@
     
     /* page title */
     #content .container-fluid h1 {
-        display: none;
+        /*display: none;*/
+        text-orientation: sideways;
+        writing-mode: vertical-rl;
+        position: fixed;
+        right: 5px;
+        bottom: 5px;
+        z-index: 9999;
     }
     
     /* client id number */
@@ -56,19 +65,21 @@
         color: inherit;
     }
     
-    /* profile information */
-    .collapsible {
-        padding-bottom: 20px;
-    }
     
-    /* profile information rows */
+    /* profile information */
     #profile_information_view_body dl.row {
         margin: 0;
     }
+    
+    /* profile information rows */
     #profile_information_view_body dt:nth-of-type(odd),
     #profile_information_view_body dd:nth-of-type(odd) {
         background-color: #dfdfdf;
         -webkit-print-color-adjust: exact; /* force bg-color to be printed */
+    }
+    #profile_information_view_body dt,
+    #profile_information_view_body dd {
+        margin: 0;
     }
     
     /* profile information headers */
@@ -112,6 +123,11 @@
     
     /* horizontal divider in consent area */
     #client_consent_view_body hr {
+        display: none;
+    }
+    
+    /* office note header when there's no office note (hacky!) */
+    #office_note_view_button:not([data-track*="("]) {
         display: none;
     }
     
