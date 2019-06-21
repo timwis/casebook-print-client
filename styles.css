@@ -1,0 +1,8 @@
+#profile_information_view_body,
+#client_consent_view_body,
+#benefits_view_body,
+#debt_and_money_view_body,
+#office_note_view_body,
+#boundary_information_view_body {
+    display: block;
+}
