@@ -1,29 +1,29 @@
 @media print {
-    /* profile section headers */
+    /* sections */
     #benefits_view,
     #debt_and_money_view,
     #boundary_information_view {
         display: none;
     }
 
-    /* profile section bodies */
+    /* section bodies */
     #profile_information_view_body,
     #client_consent_view_body,
     #office_note_view_body
     {
         display: block;
     }
+    
+    /* section headers */
+    .collapsible-heading * {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
 
-    /* profile section expand/collapse buttons */
+    /* section headers expand/collapse buttons */
     .collapsible-button-state div,
     .collapsible-button-state::before {
         display: none;
-    }
-    
-    /* profile section headers */
-    .collapsible-heading * {
-        font-size: 1.125rem;
-        font-weight: bold;
     }
     
     /* page title */
@@ -36,19 +36,59 @@
         text-align: right;
     }
     
-    /* client name and address */
+    /* personal details */
+    #personal_details_view_body {
+        display: flex;
+    }
+    
+    /* personal details name and address */
     #personal_details_view_body .card {
         padding: 0;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    /* personal details dob, tel, email */
+    #personal_details_view_body .grouped .group {
+        padding: 0;
+    }
+    #personal_details_view_body .grouped .group dt {
+        color: inherit;
+    }
+    
+    /* profile information */
+    .collapsible {
+        padding-bottom: 20px;
     }
     
     /* profile information rows */
+    #profile_information_view_body dl.row {
+        margin: 0;
+    }
     #profile_information_view_body dt:nth-of-type(odd),
     #profile_information_view_body dd:nth-of-type(odd) {
         background-color: #dfdfdf;
+        -webkit-print-color-adjust: exact; /* force bg-color to be printed */
+    }
+    
+    /* profile information headers */
+    #profile_information_view_body dt {
+        color: inherit;
+        padding: 5px 10px;
+    }
+    
+    /* profile information values */
+    #profile_information_view_body dd {
+        padding: 5px 10px;
     }
     
     /* consent rows */
-    .component-client-consent,
+    .component-client-consent {
+        padding: 5px 10px;
+        margin: 0;
+    }
+    
+    /* consent rows title */
     .component-client-consent h4 {
         padding: 0;
         margin: 0;
@@ -57,6 +97,7 @@
     /* consent rows */
     .component-client-consent:nth-of-type(odd) {
         background-color: #dfdfdf !important; /* override another !important */
+        -webkit-print-color-adjust: exact; /* force bg-color to be printed */
     }
     
     /* renew consent container which otherwise makes consent rows have inconsistent heights */
