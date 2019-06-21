@@ -1,138 +1,151 @@
-@media print {
+/* ==UserStyle==
+@name           casebook-print-client
+@namespace      timwis
+@version        1.0.0
+@description    Adds print-friendly styles to client profile
+@author         Tim Wisniewski <tim@timwis.com>
+@license        MIT
+@homepageURL    https://github.com/timwis/casebook-print-client
+==/UserStyle== */
+@-moz-document url-prefix("https://casebook.training.citizensadvice.org.uk/clients/") {
+  @media print {
     /* sections */
     .collapsible {
-        padding-bottom: 20px;
+      padding-bottom: 20px;
     }
     #benefits_view,
     #debt_and_money_view,
     #boundary_information_view {
-        display: none;
+      display: none;
     }
 
     /* section bodies */
     #profile_information_view_body,
     #client_consent_view_body,
-    #office_note_view_body
-    {
-        display: block;
+    #office_note_view_body {
+      display: block;
     }
-    
+
     /* section headers */
     .collapsible-heading * {
-        font-size: 1.5rem;
-        font-weight: bold;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
 
     /* section headers expand/collapse buttons */
     .collapsible-button-state div,
     .collapsible-button-state::before {
-        display: none;
+      display: none;
     }
-    
+
     /* page title */
     #content .container-fluid h1 {
-        /*display: none;*/
-        text-orientation: sideways;
-        writing-mode: vertical-rl;
-        position: fixed;
-        right: 5px;
-        bottom: 5px;
-        z-index: 9999;
+      /*display: none;*/
+      text-orientation: sideways;
+      writing-mode: vertical-rl;
+      position: fixed;
+      right: 5px;
+      bottom: 5px;
+      z-index: 9999;
     }
-    
+
     /* client id number */
     .component-side-bar h2 {
-        text-align: right;
+      text-align: right;
     }
-    
+
     /* personal details */
     #personal_details_view_body {
-        display: flex;
+      display: flex;
     }
-    
+
     /* personal details name and address */
     #personal_details_view_body .card {
-        padding: 0;
-        flex: 0 0 50%;
-        max-width: 50%;
+      padding: 0;
+      flex: 0 0 50%;
+      max-width: 50%;
     }
-    
+
     /* personal details dob, tel, email */
     #personal_details_view_body .grouped .group {
-        padding: 0;
+      padding: 0;
     }
     #personal_details_view_body .grouped .group dt {
-        color: inherit;
+      color: inherit;
     }
-    
-    
+
+
     /* profile information */
     #profile_information_view_body dl.row {
-        margin: 0;
+      margin: 0;
     }
-    
+
     /* profile information rows */
     #profile_information_view_body dt:nth-of-type(odd),
     #profile_information_view_body dd:nth-of-type(odd) {
-        background-color: #dfdfdf;
-        -webkit-print-color-adjust: exact; /* force bg-color to be printed */
+      background-color: #dfdfdf;
+      -webkit-print-color-adjust: exact;
+      /* force bg-color to be printed */
     }
     #profile_information_view_body dt,
     #profile_information_view_body dd {
-        margin: 0;
+      margin: 0;
     }
-    
+
     /* profile information headers */
     #profile_information_view_body dt {
-        color: inherit;
-        padding: 5px 10px;
+      color: inherit;
+      padding: 5px 10px;
     }
-    
+
     /* profile information values */
     #profile_information_view_body dd {
-        padding: 5px 10px;
+      padding: 5px 10px;
     }
-    
+
     /* consent rows */
     .component-client-consent {
-        padding: 5px 10px;
-        margin: 0;
+      padding: 5px 10px;
+      margin: 0;
     }
-    
+
     /* consent rows title */
     .component-client-consent h4 {
-        padding: 0;
-        margin: 0;
+      padding: 0;
+      margin: 0;
     }
-    
+
     /* consent rows */
     .component-client-consent:nth-of-type(odd) {
-        background-color: #dfdfdf !important; /* override another !important */
-        -webkit-print-color-adjust: exact; /* force bg-color to be printed */
+      background-color: #dfdfdf !important;
+      /* override another !important */
+      -webkit-print-color-adjust: exact;
+      /* force bg-color to be printed */
     }
-    
+
     /* renew consent container which otherwise makes consent rows have inconsistent heights */
     .component-client-consent .consent-renew + .row {
-        display: none;
+      display: none;
     }
-    
+
     /* header dividing general consent from special categories */
     #client_consent_view_body h4.h6 {
-        display: none;
+      display: none;
     }
-    
+
     /* horizontal divider in consent area */
     #client_consent_view_body hr {
-        display: none;
+      display: none;
     }
-    
+
     /* office note header when there's no office note (hacky!) */
     #office_note_view_button:not([data-track*="("]) {
-        display: none;
+      display: none;
     }
-    
+
     /* cases */
     #client-cases-table-container {
-        display: none;
+      display: none;
     }
+  }
 }
